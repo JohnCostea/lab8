@@ -1,9 +1,17 @@
-import MovieItem from "./MovieItem";
+import MovieItem from "./movieItem";
 
-export default function Movies (props){
-    return props.movies.map(
-        (movie) =>{
-                return <MovieItem mymovie={movie} key={movie.Title}></MovieItem>
-        }
+function Movies(props) {
+    return (
+        <>
+            {props.myMovies.map((movie) => (
+                <MovieItem
+                    myMovie={movie}
+                    key={movie._id}
+                    Reload={props.ReloadData}
+                />
+            ))}
+        </>
     );
 }
+
+export default Movies;
